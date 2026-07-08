@@ -135,7 +135,7 @@ footer{text-align:center;margin-top:40px;color:var(--muted);font-size:.85em;line
   <!-- ============ 玩家 ============ -->
   <div id="player" class="tab-content active">
     <div class="alert">
-      <b>🚀 你是新人？照这三步做完就能玩</b>
+      <b>🚀 你是新人？从这三步起学习如何使用</b>
       <ol>
         <li>如果你会施法：<code>.法槽 法师 5</code>（把"法师 5"换成你的职业和等级）</li>
         <li>装上武器：<code>.装备 长剑</code></li>
@@ -222,7 +222,7 @@ footer{text-align:center;margin-top:40px;color:var(--muted);font-size:.85em;line
     </details>
 
     <details>
-      <summary>② 攻击（最常用）</summary>
+      <summary>② 攻击（这里指的是使用武器攻击）</summary>
       <div class="body">
         <div class="cmd">
           <div class="cmd-head">.攻击 <span class="cmd-en">.sattack</span></div>
@@ -238,8 +238,8 @@ footer{text-align:center;margin-top:40px;color:var(--muted);font-size:.85em;line
           <ul>
             <li><code>.攻击 哥布林 优势</code> <span class="exp">优势=掷两个d20取高的那个</span></li>
             <li><code>.攻击 哥布林 劣势</code> <span class="exp">劣势=掷两个d20取低的那个</span></li>
-            <li><code>.攻击 哥布林 命中+1d4</code> <span class="exp">命中额外加1d4（比如被祝福术加持）</span></li>
-            <li><code>.攻击 哥布林 伤害+2d6</code> <span class="exp">伤害额外加2d6（比如偷袭、猎人印记）</span></li>
+            <li><code>.攻击 哥布林 命中+1d4</code> <span class="exp">手动让这次攻击命中临时加1d4（用于没来得及挂效果、或只用一次的情况；祝福术这种持续buff请用 .效果 挂上去，会自动生效）</span></li>
+            <li><code>.攻击 哥布林 伤害+2d6</code> <span class="exp">手动让伤害临时加2d6（同上；猎人印记、偷袭等持续伤害请用 .效果，效果指令的都会自动生效，不需要每次手动加）</span></li>
             <li><code>.攻击 哥布林 附赠</code> <span class="exp">标记这是附赠动作（只是显示，不影响计算，实际也没有任何实际用处，仅是让别人知道你是用附赠打）</span></li>
             <li><code>.攻击 哥布林 优势 伤害+1d6</code> <span class="exp">全部叠一起也行</span></li>
           </ul>
@@ -255,7 +255,7 @@ footer{text-align:center;margin-top:40px;color:var(--muted);font-size:.85em;line
 
           <div class="label">特殊：</div>
           <ul>
-            <li><code>.攻击 self</code> <span class="exp">攻击自己（也可写 自己 / 我），真的要打自己吗......？</span></li>
+            <li><code>.攻击 self</code> <span class="exp">攻击自己（也可写 自己 / 我），但是真的要打自己吗......？</span></li>
           </ul>
 
           <div class="label">可能遇到的问题：</div>
@@ -263,7 +263,7 @@ footer{text-align:center;margin-top:40px;color:var(--muted);font-size:.85em;line
             <div class="row"><span class="code-cell">请先.装备武器</span><span class="desc-cell">还没装武器。先 <code>.装备 长剑</code>。</span></div>
             <div class="row"><span class="code-cell">尚未启用模组</span><span class="desc-cell">DM还没把怪放出来。让DM先 <code>.怪物 启用 模组名</code>。</span></div>
             <div class="row"><span class="code-cell">未找到怪物</span><span class="desc-cell">怪名写错，或DM没录这只。让DM发 <code>.怪物 list</code> 看正确怪名。</span></div>
-            <div class="row"><span class="code-cell">命中-2很怪</span><span class="desc-cell">你开了巨武器大师/神射手（命中-5换伤害+10），正常现象。不想要就 <code>.专长 关闭 巨武器大师</code>。</span></div>
+            <div class="row"><span class="code-cell">命中-x看起来比较奇怪</span><span class="desc-cell">你开了巨武器大师/神射手（命中-5换伤害+10），由于脚本会内置自动计算，所以是正常现象。感到疑惑的话可以先自己手算一下真实命中，以及关闭专长指令是： <code>.专长 关闭 巨武器大师</code>。（示例）</span></div>
           </div>
         </div>
       </div>
@@ -443,7 +443,7 @@ footer{text-align:center;margin-top:40px;color:var(--muted);font-size:.85em;line
             <li><code>.能力 开启 警觉</code> <span class="exp">记录一下我有警觉专长</span></li>
             <li><code>.能力 关闭 盾牌大师</code></li>
           </ul>
-          <div class="note">为什么存在：DND几百个专长，大部分（先攻、位移、隐匿类）这套系统做不了自动化，给你个地方记着别忘。</div>
+          <div class="note">为什么存在：DND非常非常多的专长和特殊能力（比如魔能祈唤和超魔法），大部分（包括不限于先攻、位移、隐匿类的）这套系统都做不了自动化，但是可以给你个地方记着（也许之后会做，不过我个人更倾向使用海豹原生指令）。</div>
         </div>
 
         <div class="cmd">
@@ -451,15 +451,15 @@ footer{text-align:center;margin-top:40px;color:var(--muted);font-size:.85em;line
           <ul>
             <li><code>.大休</code> <span class="exp">HP回满 + 全部法术位恢复（为什么用大休不用长休，因为这个指令被海豹原生占了）</span></li>
             <li><code>.小休</code> <span class="exp">邪术师契约法术位自动补满，其他职业不恢复资源（为什么用小休，原因同上）</span></li>
-            <li><code>.等级 5</code> <span class="exp">设角色总等级（影响戏法威力）</span></li>
+            <li><code>.等级 5</code> <span class="exp">设角色总等级（会影响戏法威力）</span></li>
           </ul>
-          <div class="note">⚠️ 如果你已经用过 <code>.法槽 职业 等级</code>，等级会自动算好，<b>不用</b>再单独用 .等级这个指令。这个指令主要给不施法的纯物攻用（只是用来告诉非施法者可以用简写，并没有什么实际用处。。）</div>
+          <div class="note">⚠️ 如果你已经用过 <code>.法槽 职业 等级</code>，等级会自动算好，<b>不用</b>再单独用 .等级这个指令。这个指令主要给不施法的pc用（只是用来告诉非施法者可以用简写，并没有什么实际用处。。）</div>
         </div>
       </div>
     </details>
 
     <details>
-      <summary>⑥ 撤回（上一条指令错了想反悔）</summary>
+      <summary>⑥ 撤回（如果上一条指令错了想要反悔）</summary>
       <div class="body">
         <div class="cmd">
           <div class="cmd-head">.撤回 <span class="cmd-en">.undo</span></div>
