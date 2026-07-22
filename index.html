@@ -307,7 +307,7 @@ footer{text-align:center;margin-top:40px;color:var(--muted);font-size:.85em;line
           <li><code>.施法 疗伤术 @李四</code></li>
           <li><code>.施法 疗伤术</code> <span class="exp">不写目标 = 给自己（治疗/增益类）</span></li>
           <li><code>.施法 火球术 哥布林 升环1</code> <span class="exp">用更高环的法术位放，伤害更高</span></li>
-          <li><code>.施法 灼热射线 哥布林 优���</code></li>
+          <li><code>.施法 灼热射线 哥布林 优势</code></li>
           <li><code>.施法 火球术 哥布林 难度+2</code> <span class="exp">临时提高目标豁免DC</span></li>
         </ul>
         <div class="label">可能遇到的问题：</div>
@@ -326,6 +326,43 @@ footer{text-align:center;margin-top:40px;color:var(--muted);font-size:.85em;line
           <li><code>.反应 银光锐语 哥布林 @友方</code> <span class="exp">敌人是怪物时写怪名</span></li>
           <li><code>.反应 银光锐语 @敌人</code> <span class="exp">不写友方 = 优势给自己</span></li>
         </ul>
+      </div>
+
+      <div class="cmd">
+        <div class="cmd-head">.至圣斩 <span class="cmd-en">.smite</span> <span class="note">（圣武士专用）</span></div>
+        <div class="cmd-mean"><b>它是干嘛的：</b>圣武士命中后消耗法术位，追加光耀伤害。<b>先用 .攻击 确认命中，然后立即发本指令</b>——两条指令配合使用，不是一条能搞定的。</div>
+
+        <div class="label">怎么输入：</div>
+        <ul>
+          <li><code>.至圣斩 哥布林 2</code> <span class="exp">消耗2环法术位，对哥布林造成3d8光耀伤害</span></li>
+          <li><code>.至圣斩 @张三 1</code> <span class="exp">对玩家至圣斩（消耗1环，2d8）</span></li>
+          <li><code>.至圣斩 哥布林 2 暴击</code> <span class="exp">暴击攻击后使用，所有骰子翻倍</span></li>
+          <li><code>.至圣斩 哥布林 2 亡灵</code> <span class="exp">对亡灵/魔鬼额外+1d8（规则特性）</span></li>
+          <li><code>.至圣斩 哥布林 3 暴击 亡灵</code> <span class="exp">组合参数，顺序随便</span></li>
+        </ul>
+
+        <div class="label">法术位环数 → 光耀伤害骰：</div>
+        <div class="param">
+          <div class="row"><span class="code-cell">1环</span><span class="desc-cell">2d8 光耀伤害</span></div>
+          <div class="row"><span class="code-cell">2环</span><span class="desc-cell">3d8 光耀伤害</span></div>
+          <div class="row"><span class="code-cell">3环</span><span class="desc-cell">4d8 光耀伤害</span></div>
+          <div class="row"><span class="code-cell">4环以上</span><span class="desc-cell">5d8 光耀伤害（上限）</span></div>
+          <div class="row"><span class="code-cell">亡灵/魔鬼</span><span class="desc-cell">在以上基础再 +1d8（暴击时同样翻倍）</span></div>
+        </div>
+
+        <div class="label">标准战斗流程：</div>
+        <ul>
+          <li><code>.攻击 哥布林</code> → BOT报告命中 → <code>.至圣斩 哥布林 2</code></li>
+          <li>暴击时：<code>.攻击 哥布林</code> → BOT报告暴击 → <code>.至圣斩 哥布林 2 暴击</code></li>
+        </ul>
+        <div class="note">⚠️ 未命中就不用发至圣斩了，系统不会自动判断你有没有命中，写了就扣法术位。</div>
+
+        <div class="label">可能遇到的问题：</div>
+        <div class="param">
+          <div class="row"><span class="code-cell">没有可用的X环法术位</span><span class="desc-cell">法术位用完了。<code>.法槽 show</code> 查剩余，<code>.大休</code> 恢复。</span></div>
+          <div class="row"><span class="code-cell">未找到怪物</span><span class="desc-cell">怪名写错，用 <code>.怪物 list</code> 确认名字。</span></div>
+          <div class="row"><span class="code-cell">伤害未结算</span><span class="desc-cell">没写目标名，指令只显示伤害但不扣血。补上怪名重发即可（但法术位已扣）。</span></div>
+        </div>
       </div>
     </div>
   </details>
